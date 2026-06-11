@@ -1,0 +1,140 @@
+/* --- 1. LOCAL FONTS --- */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/playfair-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* --- 2. GLOBAL THEME --- */
+body { 
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .serif { 
+    font-family: 'Playfair Display', serif; 
+}
+
+.pink-theme { 
+    background-color: #FFF1F2 !important; 
+    min-height: 80vh; 
+}
+
+/* --- 3. COMPONENT STYLING --- */
+.dropdown:hover .dropdown-menu { 
+    display: block !important; 
+}
+
+.floating-wa { 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    transition: transform 0.3s; 
+}
+
+.floating-wa:hover { 
+    transform: scale(1.1); 
+}
+
+/* --- 4. TESTIMONIAL BOX ALIGNMENT (Strictly Limited to Native Slider Only) --- */
+.testimonialSwiper { 
+    min-height: 450px; 
+}
+
+/* Forces only your native patient slides to match heights */
+.testimonialSwiper .swiper-slide { 
+    height: auto !important; 
+    display: flex !important; 
+}
+
+/* Ensures your native dark blue cards fill 100% height */
+.testimonialSwiper .swiper-slide > div {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 100% !important; 
+}
+
+/* Keeps the transition smooth only for your native patient carousel */
+.testimonialSwiper .swiper-wrapper { 
+    transition-timing-function: linear !important; 
+    display: flex !important;
+}
+
+.testimonial-font { 
+    font-family: 'Inter', sans-serif; 
+}
+
+.swiper-pagination-bullet-active { 
+    background: #db2777 !important; 
+}
+
+.gradient-text { 
+    background: linear-gradient(to right, #db2777, #9d174d); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+
+/* Keeps the Programs menu consistent across all pages */
+.dropdown-menu {
+    transition: all 0.3s ease;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    pointer-events: auto;
+    opacity: 1;
+    display: block !important;
+}
+
+/* Custom Hover Effect for Program Cards */
+.program-card-hover:hover {
+    background-color: #FFF1F2 !important; 
+    border-color: #fbcfe8 !important;
+    transition: all 0.3s ease;
+}
+
+/* FAQ Icon Toggle Logic */
+details summary i.fa-minus {
+    display: none; 
+}
+
+details[open] summary i.fa-plus {
+    display: none; 
+}
+
+details[open] summary i.fa-minus {
+    display: block; 
+}
+
+
+/* Fixes the "Font Display" warning for both fonts */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap !important;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap !important;
+}
+/* Featurable Widget Fix */
+#featurable-eee66ac1-335d-451c-8d9f-8e9335eb8c2b {
+    display: block !important;
+    width: 100% !important;
+}
+/* Reduce empty space inside Featurable widget */
+#featurable-eee66ac1-335d-451c-8d9f-8e9335eb8c2b {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FFF1F2"> 
+    <link rel="manifest" href="/manifest.json"> 
+    
+    <link rel="apple-touch-icon" href="/images/logo.webp"> 
+    
+    <link rel="icon" type="image/webp" sizes="32x32" href="/images/favicon.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/images/favicon.webp">
+    <link rel="shortcut icon" href="/images/favicon.webp">
+
+    <title>{{ title or "Clinical Yoga Classes by Shringarika Mishra | BHU Scholar(AIR 2)" }}</title>
+    <meta name="description" content="{{ description or 'Reclaim your health with Gold Medalist & BHU Research Scholar Shringarika Mishra. Evidence-based clinical yoga protocols for reversing PCOS, treating Infertility, and supporting IVF success naturally and much more.' }}">
+
+    <meta property="og:image" content="https://onlineyogaclass.in/images/ogimage.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css" media="print" onload="this.media='all'">
+    <link rel="preload" as="image" href="/images/yogariver.webp" fetchpriority="high">
+    <link rel="preload" href="/assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/fonts/playfair-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "SHRINGARIKA | Clinical Yoga Specialist",
+      "alternateName": "Online Yoga Class by Shringarika",
+      "url": "https://onlineyogaclass.in",
+      "logo": "https://onlineyogaclass.in/images/logo.webp",
+      "image": "https://onlineyogaclass.in/images/shringarika.webp",
+      "description": "Gold Medalist & BHU Research Scholar providing clinical yoga protocols for PCOS, Infertility, and Hormonal Health.",
+      "telephone": "+919559827280",
+      "priceRange": "$$",
+      "email": "onlineyogaclassbyshri@gmail.com",
+      
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "BHU Campus",
+    "addressLocality": "Varanasi",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "221005",
+    "addressCountry": "IN"
+  },
+
+  
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Worldwide"
+  },
+
+  
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Clinical Yoga Programs",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Infertility & Reproductive Health Yoga",
+          "description": "Research-backed clinical protocols to increase pelvic vascularity and enhance natural conception or IVF support."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "PCOS & Hormonal Health Yoga",
+          "description": "Therapeutic yoga focusing on cortisol regulation, balancing the endocrine system, and managing insulin resistance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pregnancy & Prenatal Yoga",
+          "description": "Safe, evidence-based prenatal yoga targeting pelvic floor strength, back pain relief, and labor preparation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Yoga for IVF Support",
+          "description": "Gentle, stress-reducing clinical sequences designed to optimize uterine blood flow and support embryo receptivity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Elderly Care Yoga",
+          "description": "Gentle mobility and balance sequences designed by medical specialists to protect joints and improve longevity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Thyroid Management Yoga",
+          "description": "Endocrine-focused postures to stimulate the thyroid gland, regulating metabolic rates and fatigue levels."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diabetes Management Yoga",
+          "description": "Abdominal twisting and therapeutic flows designed to stimulate the pancreas and naturally enhance insulin sensitivity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hypertension & Heart Health Yoga",
+          "description": "Breath-centric therapy and calming pranayama to naturally modulate heart rate and lower high blood pressure."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stress & Anxiety Management",
+          "description": "Evidence-based mindfulness, relaxation, and Yoga Nidra to reset the nervous system and lower cortisol spikes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "General Wellness & Immunity",
+          "description": "Holistic vital alignment and lifestyle balance paths to protect systemic biological immunity and cellular energy."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Weight Loss & Metabolism Reset",
+          "description": "Dynamic therapeutic movements targeting endocrine optimization and active metabolic regulation for safe fat loss."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Postpartum Recovery Protocol",
+          "description": "Clinical rehabilitation following childbirth, focusing on diastasis recti, core stability, and pelvic floor reconditioning."
+        }
+      }
+    ]
+  },
+
+  
+  "sameAs": [
+    "https://www.linkedin.com/in/shringarika-mishra-400607224",
+    "https://www.researchgate.net/profile/Shringarika-Mishra",
+    "https://scholar.google.com/citations?user=FAp2CnkAAAAJ"
+  ]
+}
+</script>
+
+
+    <!-- Combined Person and FAQ Rich Results -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://onlineyogaclass.in/#shringarika",
+      "name": "Shringarika Mishra",
+      "jobTitle": "Clinical Yoga Specialist & Research Scholar",
+      "url": "https://onlineyogaclass.in",
+      "image": "https://onlineyogaclass.in/images/shringarika.webp",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Patanjali"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Banaras Hindu University (BHU)"
+        }
+      ],
+      "awards": "Gold Medalist (AIR 2)",
+      "sameAs": [
+        "https://www.linkedin.com/in/shringarika-mishra-400607224",
+        "https://www.researchgate.net/profile/Shringarika-Mishra",
+        "https://scholar.google.com/citations?user=FAp2CnkAAAAJ"
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://onlineyogaclass.in/#organization",
+          "name": "Shringarika Mishra - Clinical Yoga",
+          "url": "https://onlineyogaclass.in",
+          "logo": "https://onlineyogaclass.in/images/logo.webp"
+        }
+      ]
+    }
+    </script>
+{{ otherScripts | safe }}
+<style>
+    /* 1. KEEP: The Dropdown menu logic already there */
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+
+    /* 2. ADD: All of your Program Card styling here */
+    .program-card { 
+        background-color: #FFF1F2 !important; 
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid #fbcfe8 !important; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .program-card:hover { 
+        transform: translateY(-8px); 
+        background-color: #ffe4e6 !important; 
+        border-color: #f472b6 !important;
+    }
+
+    .program-card.active-card {
+        background-color: #fce7f3 !important; 
+        border: 2px solid #db2777 !important; 
+        transform: scale(1.03);
+    }
+    
+/* REPAIR FIX: Keeps reviews side-by-side without freezing the slider layout */
+    .testimonialSwiper {
+        display: block !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+    .testimonialSwiper .swiper-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .testimonialSwiper .swiper-slide {
+        display: block !important;
+        width: 100% !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* 3. ADD: The Tabs and Animation logic */
+    html { scroll-behavior: smooth; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.5s; }
+
+    .program-image { width: 100%; max-width: 450px; border-radius: 24px; object-fit: cover; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Premium Mobile Element Cleansers */
+    .premium-mobile-link {
+        outline: none !important;
+        box-shadow: 0 2px 8px -1px rgba(244, 63, 94, 0.04), 0 1px 4px -1px rgba(0, 0, 0, 0.02) !important;
+        border: 1px solid rgba(251, 207, 232, 0.45) !important;
+        text-decoration: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    .premium-mobile-link:active, .premium-mobile-link:focus {
+        outline: none !important;
+        background-color: #FFF1F2 !important;
+        border-color: #f472b6 !important;
+    }
+
+    /* Protects PageSpeed & CLS Scores: Holds a stable box space dynamically */
+    #featurable-eee66ac1-335d-451c-8d9f-8e9335eb8c2b {
+        min-height: 480px !important;
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        color: currentColor; 
+    }
+</style>
+
+<link rel="canonical" href="https://onlineyogaclass.in{% if page.url == '/' %}/{% else %}{{ page.url | replace(r/\/$/, '') }}{% endif %}">
+</head>
+
+
+<body class="bg-pink-50 text-gray-800">
+
+    <nav class="relative z-50 bg-pink-50 border-b border-pink-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center space-x-3">
+                    <img src="/images/logo.webp" alt="Shringarika Clinical Yoga Specialist Logo" width="48" height="48" class="h-12 w-12 rounded-full border border-pink-200">
+                    <div>
+                        <span class="block text-xl font-extrabold text-gray-900 leading-none">SHRINGARIKA</span>
+                        <span class="text-[10px] uppercase tracking-widest text-pink-600 font-bold">Clinical Yoga Specialist</span>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none p-2" aria-label="Open Mobile Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-6 text-sm font-bold text-gray-600">
+    <a href="/" class="{% if page.url == '/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">Home</a>
+    
+    <a href="/about/" class="{% if page.url == '/about/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">About</a>
+    
+    <div class="relative dropdown">
+        <button class="flex items-center {% if page.url == '/programs/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition py-8">
+            Programs <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+        </button>
+        <div class="dropdown-menu absolute left-1/2 -translate-x-1/2 w-[300px] bg-white border border-gray-50 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-3xl overflow-hidden flex z-[100]">
+            <div class="w-full py-4 max-h-[400px] overflow-y-auto">
+                <a href="/programs/#infertility" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-baby text-pink-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Infertility</span>
+                </a>
+                <a href="/programs/#pcos" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-female text-pink-500 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">PCOS</span>
+                </a>
+                <a href="/programs/#pregnancy" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-universal-access text-pink-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Pregnancy</span>
+                </a>
+                <a href="/programs/#ivf" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-dna text-blue-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Yoga during IVF</span>
+                </a>
+                <a href="/programs/#elderly" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-walking text-orange-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Elderly Care</span>
+                </a>
+                <a href="/programs/#thyroid" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-leaf text-green-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Thyroid</span>
+                </a>
+                <a href="/programs/#diabetes" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-tint text-blue-500 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Diabetes</span>
+                </a>
+                <a href="/programs/#hypertension" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-heartbeat text-red-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Hypertension</span>
+                </a>
+                <a href="/programs/#stress" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-brain text-purple-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Stress Management</span>
+                </a>
+                <a href="/programs/#wellness" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-spa text-green-400 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">General Wellness</span>
+                </a>
+                <a href="/programs/#weightloss" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-weight text-blue-500 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Weight Loss</span>
+                </a>
+                <a href="/programs/#postpartum" class="flex items-center px-6 py-2 hover:bg-pink-50 group">
+                    <i class="fas fa-child text-pink-500 w-6 text-center mr-3"></i>
+                    <span class="text-gray-700 group-hover:text-pink-600">Postpartum Care</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <a href="/blogs/" class="{% if page.url == '/blogs/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">Blogs</a>
+
+    <a href="/testimonials/" class="{% if page.url == '/testimonials/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">Testimonials</a>
+    
+    <a href="/contact/" class="{% if page.url == '/contact/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">Contact</a>
+    
+    <a href="/programs/" class="{% if page.url == '/programs/' %}text-pink-600{% else %}hover:text-pink-600{% endif %} transition">Pricing</a>
+    
+    <div class="flex items-center space-x-3">
+        <a href="/programs/" class="bg-pink-600 text-white px-5 py-2.5 rounded-full hover:bg-pink-700 shadow-md transition">View Pricing Plans</a>
+        <a href="https://wa.me/919559827280" class="text-green-600 font-bold border-2 border-green-600 px-5 py-2.5 rounded-full hover:bg-green-50 transition">Book a Demo</a>
+    </div>
+</div>
+    </nav>
+
+<div id="mobile-menu" class="hidden absolute top-0 left-0 w-full min-h-screen z-[100] bg-pink-50 p-6 flex flex-col transform translate-x-full transition-transform duration-300">
+    <div class="flex justify-between items-center mb-6">
+        <span class="font-extrabold text-xl text-gray-900 tracking-tight">MENU</span>
+        <button id="close-menu" class="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-pink-600 focus:outline-none -mr-2">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+    </div>
+  
+    <div class="flex flex-col text-lg font-bold text-gray-700 overflow-y-auto max-h-[calc(100vh-140px)]">
+        <a href="/" class="py-3 block hover:text-pink-600 transition-colors">Home</a>
+        <a href="/about/" class="py-3 block hover:text-pink-600 transition-colors">About</a>
+        
+        <div class="w-full py-3">
+            <button id="mobile-programs-toggle" class="w-full flex justify-between items-center text-left font-bold text-lg text-gray-700 focus:outline-none hover:text-pink-600 transition-colors">
+                <span>Programs</span>
+                <i id="mobile-chevron" class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+            </button>
+            
+            <div id="mobile-programs-dropdown" class="hidden flex-col mt-4 ml-2 pl-4 border-l border-pink-200 space-y-4">
+                <a href="/programs/#infertility" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-baby text-pink-400 text-lg"></i>
+                    </div>
+                    <span>Infertility</span>
+                </a>
+                <a href="/programs/#pcos" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-female text-pink-500 text-lg"></i>
+                    </div>
+                    <span>PCOS</span>
+                </a>
+                <a href="/programs/#pregnancy" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-universal-access text-pink-400 text-lg"></i>
+                    </div>
+                    <span>Pregnancy</span>
+                </a>
+                <a href="/programs/#ivf" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-dna text-blue-400 text-lg"></i>
+                    </div>
+                    <span>Yoga during IVF</span>
+                </a>
+                <a href="/programs/#elderly" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-walking text-orange-400 text-lg"></i>
+                    </div>
+                    <span>Elderly Care</span>
+                </a>
+                <a href="/programs/#thyroid" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-leaf text-green-400 text-lg"></i>
+                    </div>
+                    <span>Thyroid</span>
+                </a>
+                <a href="/programs/#diabetes" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-tint text-blue-500 text-lg"></i>
+                    </div>
+                    <span>Diabetes</span>
+                </a>
+                <a href="/programs/#hypertension" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-heartbeat text-red-400 text-lg"></i>
+                    </div>
+                    <span>Hypertension</span>
+                </a>
+                <a href="/programs/#stress" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-brain text-purple-400 text-lg"></i>
+                    </div>
+                    <span>Stress Management</span>
+                </a>
+                <a href="/programs/#wellness" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-spa text-green-400 text-lg"></i>
+                    </div>
+                    <span>General Wellness</span>
+                </a>
+                <a href="/programs/#weightloss" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-weight text-blue-500 text-lg"></i>
+                    </div>
+                    <span>Weight Loss</span>
+                </a>
+                <a href="/programs/#postpartum" class="flex items-center py-1 text-gray-700 hover:text-pink-600 mobile-dropdown-item text-base font-semibold tracking-wide">
+                    <div class="w-8 flex justify-center mr-2">
+                        <i class="fas fa-child text-pink-500 text-lg"></i>
+                    </div>
+                    <span>Postpartum Care</span>
+                </a>
+            </div>
+        </div>
+
+        <a href="/blogs/" class="py-3 block hover:text-pink-600 transition-colors">Blogs</a>
+        <a href="/testimonials/" class="py-3 block hover:text-pink-600 transition-colors">Testimonials</a>
+        <a href="/contact/" class="py-3 block hover:text-pink-600 transition-colors">Contact</a>
+        <a href="/programs/" class="py-3 block hover:text-pink-600 transition-colors">Pricing</a>
+        
+        <hr class="border-gray-200 my-4">
+        
+        <a href="https://wa.me/919559827280" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4) !important;" class="block text-white px-6 py-4 rounded-2xl text-center font-bold text-base tracking-wider uppercase transition-all duration-300 active:scale-95 mt-4 flex items-center justify-center space-x-2">
+            <i class="fab fa-whatsapp text-xl text-white"></i>
+            <span class="text-white">Book Your Free Session</span>
+        </a>
+    </div>
+</div>
+
+<main>
+        <div class="full-content-wrapper">
+            {{ content | safe }}
+        </div>
+        
+        {# Inject the clean green date dynamically right above the main title inside the card #}
+        {% if layout == "base.njk" and publishDate and page.url != "/blogs/" %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // 1. Locate the white article content card container
+                    const articleCard = document.querySelector(".article-card h2");
+                    if (articleCard) {
+                        // 2. Create a clean green date badge matching your exact brand look
+                        const dateContainer = document.createElement("div");
+                        dateContainer.className = "font-bold text-sm uppercase tracking-wider mt-4 mb-1 flex items-center gap-1.5";
+                        dateContainer.style.cssText = "color: #059669 !important; display: inline-flex !important; width: 100%; alignment-baseline: middle;";
+                        dateContainer.innerHTML = `<i class="far fa-calendar-alt text-[12px]" style="color: #10b981 !important; margin-right: 6px;"></i> ${ '{{ publishDate }}' }`;
+                        // 3. Drop it beautifully inside the white card right over your title heading
+                        articleCard.parentNode.insertBefore(dateContainer, articleCard);
+                    }
+                });
+            </script>
+        {% endif %}
+
+        {# AUTOMATED MEDICAL REPORT BANNER INSERTER & DE-DUPLICATOR (STRICT ARTICLE FILTER) #}
+        {% if tags and "blogs" in tags and page.url != "/blogs/" and page.url != "/blogs.html" %}
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    // 1. Target your article content area safely
+                    const container = document.querySelector(".article-card") || document.querySelector(".full-content-wrapper");
+                    if (!container) return;
+
+                    // 2. TARGETED SAFETY CHECK: Stop instantly if a report analysis layout is already found inside the markup
+                    const bodyHTML = container.innerHTML;
+                    if (bodyHTML.includes("I%20want%20to%20get%20a%20free%20consultation") || bodyHTML.includes("Get Your Free Medical Report Analysis")) {
+                        console.log("Medical report block already explicitly present on this route. Injection safely bypassed.");
+                        return;
+                    }
+
+                    // 3. Find all complete top-level text paragraph or section blocks inside the actual content body
+                    const structuralBlocks = Array.from(container.querySelectorAll(".full-content-wrapper p, .full-content-wrapper section, .article-card p, .article-card section")).filter(block => {
+                        // Ensure we do not pull elements from headers, metadata scripts, or global profile boxes
+                        return !block.closest('header') && !block.closest('.bg-gray-900') && !block.closest('script');
+                    });
+
+                    if (structuralBlocks.length > 2) {
+                        // 4. Calculate a clean midpoint block so it appears cleanly after a paragraph ends
+                        const midpoint = Math.floor(structuralBlocks.length / 2);
+                        const targetInsertionBlock = structuralBlocks[midpoint - 1];
+
+                        // 5. Generate pristine green card layout matching your exact template specs
+                        const bannerWrapper = document.createElement("div");
+                        bannerWrapper.className = "my-10 max-w-3xl mx-auto border border-green-600 rounded-[2.5rem] bg-white p-8 text-center relative overflow-hidden shadow-md w-full clear-both";
+                        bannerWrapper.innerHTML = `
+                            <div class="absolute top-0 right-0 bg-green-600 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">FREE SERVICE</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Get Your Free Medical Report Analysis</h3>
+                            <p class="mb-6 text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
+                                Stop guessing your recovery path. Click the button below to text our team directly on WhatsApp. Attach your latest ultrasound or lab reports, and get a private, 15-minute clinical evaluation directly from BHU Research Scholar Shringarika Mishra.
+                            </p>
+                            <a href="https://wa.me/919559827280?text=Hello%20Team%2C%20I%20want%20to%20get%20a%20free%20consultation.%20I%20am%20attaching%20my%20medical%20reports%20here." 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="block text-center bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl font-black text-lg tracking-wide uppercase shadow-md transition transform hover:-translate-y-0.5 active:translate-y-0 max-w-xl mx-auto"
+                               style="text-decoration: none !important; color: white !important; display: block !important;">
+                                UPLOAD YOUR MEDICAL REPORTS NOW
+                            </a>
+                        `;
+
+                        // 6. Push container cleanly into the layout gap right after the target closing paragraph tag
+                        targetInsertionBlock.insertAdjacentElement('afterend', bannerWrapper);
+                        console.log("Successfully inserted dynamic center banner after closing paragraph block.");
+                    }
+                });
+            </script>
+        {% endif %}
+    </main>
+    
+
+<footer class="bg-[#0f172a] text-white py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="space-y-6">
+                <div>
+                    <span class="block text-2xl font-extrabold tracking-tight">SHRINGARIKA.</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold">CLINICAL YOGA SPECIALIST</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    Curing Infertility and PCOS naturally by establishing the bridge between ancient Yoga and modern Clinical Science. Serving clients globally from Varanasi to the USA.
+                </p>
+                <div class="space-y-3">
+                    <a href="mailto:onlineyogaclassbyshri@gmail.com" class="flex items-center text-sm text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-green-500 mr-3 w-4 text-center"></i> onlineyogaclassbyshri@gmail.com
+                    </a>
+                    <a href="https://onlineyogaclass.in" class="flex items-center text-sm text-gray-400 hover:text-white transition">
+                        <i class="fas fa-globe text-green-500 mr-3 w-4 text-center"></i> onlineyogaclass.in
+                    </a>
+                    <a href="tel:+919559827280" class="flex items-center text-sm text-gray-400 hover:text-white transition">
+                        <i class="fas fa-phone-alt text-green-500 mr-3 w-4 text-center"></i> +91 9559827280
+                    </a>
+                    <div class="flex items-start text-sm text-gray-400 pt-1 max-w-sm">
+                        <i class="fas fa-map-marker-alt text-green-500 mr-3 mt-1 w-4 text-center flex-shrink-0"></i>
+                        <span>
+                            <strong class="text-xs tracking-wider text-gray-300 block mb-0.5 uppercase">Headquarter:</strong>
+                            Lane No-2 , Anjani puram colony, Banaras Hindu University, Varanasi, UP, 221005, India
+                        </span>
+                    </div>
+                </div>
+                <div class="flex space-x-5 pt-2">
+                    <a href="https://www.instagram.com/onlineyogaclass.in?igsh=ZTQ0MmUxZXFoN2Vr&utm_source=qr" target="_blank" class="hover:opacity-80 transition" aria-label="Visit Shringarika on Instagram">
+                        <i class="fab fa-instagram text-2xl" style="color: #E4405F;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61574342103342" target="_blank" class="hover:opacity-80 transition" aria-label="Visit Shringarika on Facebook">
+                        <i class="fab fa-facebook text-2xl" style="color: #1877F2;"></i>
+                    </a>
+                    <a href="https://youtube.com/@onlineyogaclassbyshri?si=YA9V1IEIRAr3dVNv" target="_blank" class="hover:opacity-80 transition" aria-label="Watch clinical yoga protocols on YouTube">
+                        <i class="fab fa-youtube text-2xl" style="color: #FF0000;"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/in/shringarika-mishra-400607224" target="_blank" class="hover:opacity-80 transition" aria-label="Connect with Shringarika on LinkedIn">
+                        <i class="fab fa-linkedin text-2xl" style="color: #0A66C2;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xs uppercase tracking-widest mb-8 text-white">NAVIGATION</h3>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a href="/" class="hover:text-white transition">Home</a></li>
+                    <li><a href="/about/" class="hover:text-white transition">About Shringarika</a></li>
+                    <li><a href="/programs/" class="hover:text-white transition">Clinical Programs</a></li>
+                    <li><a href="/blogs/" class="hover:text-white transition">Research & Blogs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xs uppercase tracking-widest mb-8 text-white">LEGAL</h3>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="/terms/" class="hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="/refund/" class="hover:text-white transition">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[11px] text-gray-500 uppercase tracking-widest">
+                &copy; 2026 Shringarika Mishra. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919559827280?text=I%20want%20to%20book%20a%20session" class="floating-wa" style="position:fixed; bottom:30px; right:30px; z-index:999;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="64" height="64" class="w-16 h-16 shadow-2xl">
+    </a>
+
+    
+    <script>
+
+// ADVANCED MOBILE LAZY SCRIPT INJECTOR FOR SWIPER
+     document.addEventListener('DOMContentLoaded', function() {
+         const testimonialContainer = document.querySelector('.testimonialSwiper');
+
+         if (testimonialContainer) {
+             const swiperObserver = new IntersectionObserver(function(entries, observer) {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         console.log("Carousel in viewport. Fetching swiper bundle asset library.");
+
+                         // 1. Inject the javascript file dynamically
+                         const swiperScript = document.createElement('script');
+                         swiperScript.src = "/assets/swiper-bundle.min.js";
+                         swiperScript.async = true;
+
+                         swiperScript.onload = function() {
+                             // Initialize swiper instantly once script completes downloading
+                             const swiper = new Swiper('.testimonialSwiper', {
+                                 slidesPerView: 1,
+                                 spaceBetween: 30,
+                                 loop: true,
+                                 speed: 600,
+                                 autoplay: { delay: 7000, disableOnInteraction: false },
+                                 freeMode: true,
+                                 grabCursor: true,
+                                 breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+                             });
+                         };
+
+                         document.body.appendChild(swiperScript);
+                         swiperObserver.unobserve(testimonialContainer); // Turn off observer once loaded
+                     }
+                 });
+             }, { rootMargin: "200px 0px" }); // Starts loading 200px before the element scrolls into view
+
+             swiperObserver.observe(testimonialContainer);
+         }
+     });
+
+        // Unified Mobile Menu, Dropdown, and Smart Router Logic
+        const openBtn = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('close-menu');
+        const menu = document.getElementById('mobile-menu');
+        const programsToggle = document.getElementById('mobile-programs-toggle');
+        const programsDropdown = document.getElementById('mobile-programs-dropdown');
+        const chevron = document.getElementById('mobile-chevron');
+
+        // Open Mobile Menu
+        openBtn.addEventListener('click', () => {
+            menu.classList.remove('hidden');
+            setTimeout(() => {
+                menu.classList.remove('translate-x-full', 'pointer-events-none');
+            }, 10);
+        });
+
+        // Close Mobile Menu Function
+        const closeMenu = () => {
+            menu.classList.add('translate-x-full', 'pointer-events-none');
+            setTimeout(() => { 
+                menu.classList.add('hidden'); 
+                // Reset dropdown when closing menu
+                programsDropdown.classList.add('hidden');
+                programsDropdown.classList.remove('flex');
+                if(chevron) chevron.style.transform = 'rotate(0deg)';
+            }, 300);
+        };
+        
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Accordion toggle behavior for Mobile "Programs" link
+        if (programsToggle) {
+            programsToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isHidden = programsDropdown.classList.contains('hidden');
+                if (isHidden) {
+                    programsDropdown.classList.remove('hidden');
+                    programsDropdown.classList.add('flex');
+                    chevron.style.transform = 'rotate(180deg)';
+                } else {
+                    programsDropdown.classList.add('hidden');
+                    programsDropdown.classList.remove('flex');
+                    chevron.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
+        // Close menu on regular link click, but keep open if it's the toggle
+        menu.querySelectorAll('a:not(.mobile-dropdown-item)').forEach(link => { 
+            link.addEventListener('click', closeMenu); 
+        });
+
+        // SMART DROPDOWN ROUTER (Handles both Desktop & Mobile Clicks smoothly)
+        document.querySelectorAll('.dropdown-menu a, .mobile-dropdown-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Close mobile menu if item is clicked
+                if(link.classList.contains('mobile-dropdown-item')) {
+                    setTimeout(closeMenu, 150);
+                }
+                
+                // Get destination URL and hash
+                const url = new URL(this.href, window.location.origin);
+                const hash = url.hash.substring(1);
+
+                // Execute tab switching logic instantly if method exists
+                if (hash && typeof showProgram === "function") {
+                    setTimeout(() => {
+                        showProgram(hash);
+                    }, 250); // Small cushion to allow navigation/rendering to settle
+                }
+            });
+        });
+
+        // Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+
+        // Load Google Reviews with Safe Fallback for Older Computers
+        function injectFeaturable() {
+            const container = document.getElementById('featurable-eee66ac1-335d-451c-8d9f-8e9335eb8c2b');
+            if (container && !container.hasAttribute('data-loaded')) {
+                
+                // Smart Theme Adaptation for Older Monitors
+                const isDarkPage = window.getComputedStyle(document.body).backgroundColor === "rgb(15, 23, 42)";
+                container.style.color = isDarkPage ? "#f8fafc" : "#1f2937"; 
+
+                const script = document.createElement('script');
+                script.src = "https://featurable.com/assets/bundle.js";
+                script.defer = true;
+                
+                script.onerror = function() {
+                    console.warn("Review widget script bypassed safely.");
+                };
+
+                document.body.appendChild(script);
+                container.setAttribute('data-loaded', 'true');
+            }
+        }
+
+        // REPAIRED SMART ROUTER: Safe user detection with zero duplicate asset loads
+        if (navigator.userAgent.includes('Googlebot') || navigator.userAgent.includes('Chrome-Lighthouse')) {
+            // If Google is crawling, fetch the widget immediately to parse its automatic dynamic schema
+            injectFeaturable();
+        } else {
+            // For human traffic, trigger cleanly on first natural movement without background timers crashing the layout
+            window.addEventListener('scroll', injectFeaturable, { passive: true, once: true });
+            window.addEventListener('touchstart', injectFeaturable, { passive: true, once: true });
+        }
+
+    </script>
+    
+<script>
+    window.addEventListener('load', function() {
+        // Wait 5 seconds to ensure the main page is fully interactive first
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-K2RWT0HZFB";
+            script.async = true;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K2RWT0HZFB');
+            console.log('Analytics loaded');
+        }, 5000); 
+    });
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+</body>
+</html>
