@@ -31,7 +31,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "SHRINGARIKA | Clinical Yoga Specialist",
+      "name": "Clinical Yoga Classes by Shringarika Mishra | BHU Scholar(AIR 2)",
       "alternateName": "Online Yoga Class by Shringarika",
       "url": "https://onlineyogaclass.in",
       "logo": "https://onlineyogaclass.in/images/logo.webp",
@@ -223,27 +223,159 @@
     .dropdown-menu { display: none; }
     .dropdown:hover .dropdown-menu { display: block; }
 
-    /* 2. ADD: All of your Program Card styling here */
-    .program-card { 
-        background-color: #FFF1F2 !important; 
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid #fbcfe8 !important; 
+    
+
+    /* 1. Premium World-Class Vertical Stack Layout Style */
+    .premium-program-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+        align-items: start;
+    }
+    
+    @media (min-width: 1024px) {
+        .premium-program-layout {
+            grid-template-columns: 1.25fr 0.75fr;
+        }
+    }
+
+    .vertical-tier-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+        text-align: left;
+    }
+
+    .premium-tier-card {
+        background-color: #ffffff !important;
+        border: 1px solid #fbcfe8 !important;
+        border-left: 5px solid #db2777 !important;
+        border-radius: 1.25rem;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
+        align-items: stretch;
+        gap: 1.25rem;
+        transition: all 0.3s ease;
     }
 
-    .program-card:hover { 
-        transform: translateY(-8px); 
-        background-color: #ffe4e6 !important; 
-        border-color: #f472b6 !important;
+    @media (min-width: 640px) {
+        .premium-tier-card {
+            flex-direction: row;
+            align-items: center;
+            padding: 1.5rem 2rem;
+        }
     }
 
-    .program-card.active-card {
-        background-color: #fce7f3 !important; 
-        border: 2px solid #db2777 !important; 
-        transform: scale(1.03);
+    .premium-tier-card:hover {
+        transform: translateX(6px);
+        background-color: #fff1f2 !important;
+        box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.1) !important;
+    }
+
+    .premium-tier-title {
+        font-size: 1.2rem !important;
+        font-weight: 800 !important;
+        color: #111827 !important;
+        letter-spacing: -0.02em;
+    }
+
+    .premium-tier-price {
+        font-size: 1.6rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        margin-top: 0.25rem;
+    }
+
+    .premium-action-btn {
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.85rem 1.5rem;
+        border-radius: 0.75rem;
+        transition: all 0.2s ease;
+        text-align: center;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    @media (min-width: 640px) {
+        .premium-action-btn {
+            width: auto;
+            min-width: 220px;
+        }
+    }
+
+    /* 2. Premium World-Class Plan Comparison Table Layout */
+    .premium-pricing-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        text-align: left;
+    }
+
+    .premium-pricing-table th {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        font-size: 1.05rem !important;
+        font-weight: 800 !important;
+        padding: 1.5rem 1.25rem !important;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+
+    .premium-pricing-table td {
+        padding: 2rem 1.25rem !important;
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+        color: #374151 !important;
+        vertical-align: middle;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .premium-pricing-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .premium-param-col {
+        width: 34%;
+    }
+    .premium-tier-col {
+        width: 22%;
+    }
+
+    .highlight-premium-column {
+        background-color: rgba(253, 231, 243, 0.35) !important;
+    }
+
+    .premium-badge-pill {
+        display: inline-block;
+        background-color: #fce7f3 !important;
+        color: #db2777 !important;
+        font-size: 0.95rem !important;
+        font-weight: 800 !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 0.5rem;
+        border: 1px solid #fbcfe8 !important;
+    }
+
+    .premium-success-indicator {
+        color: #059669 !important;
+        font-weight: 800 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .premium-negative-indicator {
+        color: #ef4444 !important;
+        font-weight: 500 !important;
     }
     
 /* REPAIR FIX: Keeps reviews side-by-side without freezing the slider layout */
@@ -755,23 +887,27 @@
             link.addEventListener('click', closeMenu); 
         });
 
-        // SMART DROPDOWN ROUTER (Handles both Desktop & Mobile Clicks smoothly)
+        // REPAIRED DROPDOWN ROUTER: Automatically corrects the address bar window URL hash match
         document.querySelectorAll('.dropdown-menu a, .mobile-dropdown-item').forEach(link => {
             link.addEventListener('click', function(e) {
-                // Close mobile menu if item is clicked
+                // Close mobile menu if item is clicked safely
                 if(link.classList.contains('mobile-dropdown-item')) {
                     setTimeout(closeMenu, 150);
                 }
                 
-                // Get destination URL and hash
                 const url = new URL(this.href, window.location.origin);
                 const hash = url.hash.substring(1);
 
-                // Execute tab switching logic instantly if method exists
                 if (hash && typeof showProgram === "function") {
+                    // Prevent the native jumping bug from locking the wrong name string in the URL window bar
+                    e.preventDefault();
+                    
+                    // Force the address bar text string to match the condition clicked
+                    history.pushState(null, null, url.pathname + url.hash);
+                    
                     setTimeout(() => {
                         showProgram(hash);
-                    }, 250); // Small cushion to allow navigation/rendering to settle
+                    }, 250); 
                 }
             });
         });
@@ -835,5 +971,6 @@
     });
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
 </body>
 </html>
