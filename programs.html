@@ -29,7 +29,7 @@ otherScripts: |
     },
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "999",
+      "lowPrice": "499",
       "highPrice": "11999",
       "priceCurrency": "INR"
     }
@@ -37,85 +37,42 @@ otherScripts: |
   </script>
 ---
 <style>
-      /* 1. Standardizes ALL price text to one clean, professional Dark Grey color */
-      .premium-tier-price,
-      .text-pink-600, 
-      .text-blue-600, 
-      .text-green-600 {
-          color: #1f2937 !important; /* Uniform deep grey for all currencies */
-      }
-
-      /* Controls the exact size and elegance of the amount text */
-      .premium-tier-price {
-          font-size: 1.5rem !important; /* Reduces size to a balanced, clean premium font size */
-          font-weight: 800 !important; /* Sets a strong but elegant weight instead of a bulky one */
-          margin-top: 0.25rem !important;
-          display: block !important;
-      }
-
-      /* 2. Unifies all card side borders to a clean pink accent theme */
-      .premium-tier-card, 
-      [style*="border-left-color"],
-      [style*="border-left"] {
-          border-left: 5px solid #db2777 !important;
-          border-color: #fbcfe8 !important;
-      }
-
-      /* 3. Turns the large card backgrounds soft pink while keeping text layout structured */
-      .premium-tier-card {
-          background-color: #FFF1F2 !important; /* Soft, premium brand pink background canvas */
-          border: 1px solid #fbcfe8 !important; /* Soft pink outer border matching the navigation theme */
-          display: flex !important;
-          flex-direction: column !important;
-          justify-content: space-between !important;
-          gap: 1rem !important;
-      }
-      
-      @media (min-width: 768px) {
-          .premium-tier-card {
-              flex-direction: row !important;
-              align-items: center !important;
-          }
-      }
-
-      /* 4. Keeps every checkout button equal in width and styled in sleek dark grey */
-      .premium-action-btn,
-      .premium-tier-card a {
-          background-color: #111827 !important; /* Deep dark grey background */
-          color: #ffffff !important; /* White button text */
-          border: none !important;
-          border-radius: 0.75rem !important;
-          display: inline-flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          gap: 0.5rem !important;
-          font-weight: 800 !important;
-          font-size: 0.85rem !important; 
-          letter-spacing: 0.05em !important;
-          text-transform: uppercase !important;
-          padding: 1rem 1.5rem !important;
-          width: 100% !important; 
-          text-align: center !important;
-          white-space: normal !important; 
-          text-decoration: none !important;
-          min-height: 54px !important; 
-      }
-
-      @media (min-width: 768px) {
-          .premium-action-btn,
-          .premium-tier-card a {
-              width: 280px !important; /* Absolute uniform width for checkout buttons on desktop */
-              flex-shrink: 0 !important; 
-          }
-      }
-
-      /* 5. Smooth hover animations when cursor passes over buttons */
-      .premium-action-btn:hover,
-      .premium-tier-card a:hover {
-          background-color: #1f2937 !important;
-          transform: translateY(-1px) !important;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-      }
+  /* Premium Minimalist Pricing Layout */
+  .premium-pricing-table th {
+      padding: 1.5rem 1rem !important;
+  }
+  .price-tag {
+      font-size: 1.85rem !important;
+      font-weight: 900 !important;
+      color: #111827 !important;
+      margin: 0.25rem 0 !important;
+      display: block !important;
+  }
+  .price-period {
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      color: #db2777 !important; /* Elegant pink highlight for clarity */
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+  }
+  /* Custom grid button styling to match index.html exactly */
+  .program-card .grid-book-btn {
+      background-color: #111827 !important;
+      color: #ffffff !important;
+      border-radius: 9999px !important;
+      padding: 0.65rem 2rem !important;
+      font-size: 0.875rem !important;
+      font-weight: 700 !important;
+      display: inline-block !important;
+      margin-top: auto !important;
+      width: fit-content !important;
+      transition: all 0.2s ease !important;
+      text-decoration: none !important;
+  }
+  .program-card .grid-book-btn:hover {
+      background-color: #000000 !important;
+      transform: translateY(-1px) !important;
+  }
 </style>
 
 <header class="relative bg-gradient-to-b from-rose-50 to-white py-12 md:py-20 border-b border-pink-100">
@@ -158,7 +115,7 @@ otherScripts: |
 </div>
 
             <div class="flex flex-wrap gap-4">
-                <a href="#programs-grid" class="bg-gray-900 text-white px-8 py-4 rounded-full text-base font-bold hover:bg-black shadow-xl transition transform hover:-translate-y-0.5">
+                <a href="/programs/" class="bg-gray-900 text-white px-8 py-4 rounded-full text-base font-bold hover:bg-black shadow-xl transition transform hover:-translate-y-0.5">
                     Explore Clinical Programs
                 </a>
                 <a href="https://wa.me/919559827280" target="_blank" class="flex items-center gap-2 text-gray-900 font-bold px-6 py-4 rounded-full border border-gray-300 bg-white hover:bg-gray-50 transition">
@@ -195,1561 +152,252 @@ otherScripts: |
 <!-- SECTION 2: INTERACTIVE CLINICAL CONDITION GRID -->
 <section id="programs-grid" class="py-20 bg-pink-50/60 transition-colors">
     <div class="max-w-7xl mx-auto px-6">
-<div class="max-w-2xl mx-auto mb-10">
-                <div class="flex items-center justify-center space-x-2 mb-6">
-                    <i class="fas fa-book-open text-green-600 text-lg"></i>
-                    <span class="text-lg font-bold text-gray-800">Published 17 Research Papers</span>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="https://www.researchgate.net/profile/Shringarika-Mishra" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-400 transition group">
-                        <i class="fab fa-researchgate text-blue-600 text-xl"></i>
-                        <span class="text-sm font-bold text-gray-700 group-hover:text-blue-600">ResearchGate</span>
-                    </a>
-                    <a href="https://in.linkedin.com/in/shringarika-mishra-400607224" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-700 transition group">
-                        <i class="fab fa-linkedin text-blue-700 text-xl"></i>
-                        <span class="text-sm font-bold text-gray-700 group-hover:text-blue-700">LinkedIn</span>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=FAp2CnkAAAAJ&hl=en" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-red-400 transition group">
-                        <i class="fab fa-google text-red-500 text-xl"></i>
-                        <span class="text-sm font-bold text-gray-700 group-hover:text-red-500">Google Scholar</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 mt-12 text-left max-w-4xl mx-auto">
-                <div class="bg-white p-8 rounded-3xl border border-pink-100 flex flex-col justify-between shadow-sm">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Download Our Free Yoga Protocol Guide</h3>
-                        <p class="mb-6 text-gray-600 text-base leading-relaxed">Can't join now, No worries! Download our recommended Guide and Practice it. As we don't sell Yoga, We offer results.</p>
-                    </div>
-                    <a href="https://forms.gle/LGJDBfiDAqJgfW4F8" target="_blank" class="block text-center bg-pink-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-pink-700 transition shadow-md tracking-wide">
-                        Get My Free PDF Guide
-                    </a>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl border border-pink-100 flex flex-col justify-between shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-green-600 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">
-                        Free Service
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3 pr-16">Get a Free Report Consultation</h3>
-                        <p class="mb-6 text-gray-600 text-base leading-relaxed">Upload your medical reports <strong>(PCOS, Thyroid, Infertility, etc.)</strong> to get a personalized clinical yoga protocol analysis directly from our expert team.</p>
-                    </div>
-                    <a href="https://wa.me/919559827280?text=Hello%20Team%2C%20I%20want%20to%20get%20a%20free%20consultation.%20I%20am%20attaching%20my%20medical%20reports%20here." 
-                       target="_blank" 
-                       class="block text-center bg-green-50 hover:bg-green-100 text-green-800 border-2 border-green-600 px-6 py-4 rounded-xl font-black text-lg tracking-wide uppercase shadow-sm transition transform hover:-translate-y-0.5 active:translate-y-0">
-                        Upload Your Medical Reports
-                    </a>
-                </div>
-            </div>
-            
-            <hr class="border-gray-100 mt-16">
         
-        <!-- Section Sub-Heading -->
+        <div class="max-w-4xl mx-auto mb-10 flex flex-wrap justify-center items-center gap-4 text-center">
+            <div class="w-full flex items-center justify-center space-x-2 mb-2">
+                <i class="fas fa-book-open text-green-600 text-lg"></i>
+                <span class="text-lg font-bold text-gray-800">Published 17 Research Papers</span> 
+            </div>
+            <a href="https://www.researchgate.net/profile/Shringarika-Mishra" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-400 transition group">
+                <i class="fab fa-researchgate text-blue-600 text-xl"></i>
+                <span class="text-sm font-bold text-gray-700 group-hover:text-blue-600">ResearchGate</span>
+            </a>
+            <a href="https://in.linkedin.com/in/shringarika-mishra-400607224" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-blue-700 transition group">
+                <i class="fab fa-linkedin text-blue-700 text-xl"></i> 
+                <span class="text-sm font-bold text-gray-700 group-hover:text-blue-700">LinkedIn</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=FAp2CnkAAAAJ&hl=en" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-red-400 transition group">
+                <i class="fab fa-google text-red-500 text-xl"></i> 
+                <span class="text-sm font-bold text-gray-700 group-hover:text-red-500">Google Scholar</span>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-16">
+            <div class="bg-white p-8 rounded-3xl border border-pink-100 flex flex-col justify-between shadow-sm">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Download Our Free Yoga Protocol Guide</h3> 
+                    <p class="mb-6 text-gray-600 text-base leading-relaxed">Can't join now, No worries!<br>Download our recommended Guide and Practice it. As we don't sell Yoga, We offer results.</p> 
+                </div>
+                <a href="https://forms.gle/LGJDBfiDAqJgfW4F8" target="_blank" class="block text-center bg-pink-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-pink-700 transition shadow-md tracking-wide">
+                    Get My Free PDF Guide
+                </a> 
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-pink-100 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-green-600 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm">
+                    Free Service 
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 pr-16">Get a Free Report Consultation</h3> 
+                    <p class="mb-6 text-gray-600 text-base leading-relaxed">Upload your medical reports <strong>(PCOS, Thyroid, Infertility, etc.)</strong> to get a personalized clinical yoga protocol analysis directly from our expert team.</p> 
+                </div>
+                <a href="https://wa.me/919559827280?text=Hello%20Team%2C%20I%20want%20to%20get%20a%20free%20consultation.%20I%20am%20attaching%20my%20medical%20reports%20here." target="_blank" class="block text-center bg-green-50 hover:bg-green-100 text-green-800 border-2 border-green-600 px-6 py-4 rounded-xl font-black text-lg tracking-wide uppercase shadow-sm transition transform hover:-translate-y-0.5 active:translate-y-0">
+                    Upload Your Medical Reports
+                </a> 
+            </div>
+        </div>
+        
+        <hr class="border-gray-100 my-16">
+        
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold mb-4">
-                Select Your Recovery Program
-            </h2>
+            <h2 class="text-3xl font-bold mb-4">Select Your Recovery Program</h2> 
             <p class="text-gray-600 max-w-2xl mx-auto text-base">
                 Click on any specific clinical condition below to review detailed therapeutic paths, medical prerequisites, and enrollment options.
-            </p>
+            </p> 
         </div>
-        
-        <!-- Grid Structure for 12 Programs -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-            
-            <!-- Card 1: Infertility -->
-            <div onclick="showProgram('infertility')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-baby text-4xl text-pink-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Infertility Protocol</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Natural yoga movements to improve blood flow to reproductive organs and help support smooth conception cycles.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 2: PCOS / PCOD -->
-            <div onclick="showProgram('pcos')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-female text-4xl text-pink-500 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">PCOS / PCOD Management</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Specialized daily yoga flows to reset your energy levels, balance out hormones, and naturally regulate your monthly cycles.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 3: Pregnancy -->
-            <div onclick="showProgram('pregnancy')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-universal-access text-4xl text-pink-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Pregnancy (Prenatal) Care</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Gentle, safe physical setups designed month-by-month to ease back pain, relax your body, and prepare for a smooth childbirth.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 4: Yoga during IVF -->
-            <div onclick="showProgram('ivf')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-dna text-4xl text-blue-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Yoga during IVF Cycles</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Very soft, relaxing movements to lower treatment stress and improve your body's natural response during IVF cycles.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 5: Elderly Care -->
-            <div onclick="showProgram('elderly')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-walking text-4xl text-orange-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Elderly Care & Mobility</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Slow-paced, easy movements to loosen tight joints, build daily walking stability, and prevent accidental trips or falls.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 6: Thyroid -->
-            <div onclick="showProgram('thyroid')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-leaf text-4xl text-green-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Thyroid Care Protocol</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Targeted neck extensions and refreshing breathing setups to boost tracking energy and counter everyday exhaustion.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 7: Diabetes -->
-            <div onclick="showProgram('diabetes')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-tint text-4xl text-blue-500 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Diabetes Management</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Comfortable core twists and gentle abdominal squeezes to improve active digestion and balance daily blood sugar levels.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 8: Hypertension -->
-            <div onclick="showProgram('hypertension')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-heartbeat text-4xl text-red-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Hypertension Therapy</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Calming resting positions paired with focused breath rhythms to soothe the heart rate and lower high blood pressure.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 9: Stress Management -->
-            <div onclick="showProgram('stress')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-brain text-4xl text-purple-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Stress Management</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Deep mind-body relaxation methods and deep sleep routines to clear brain fog and drop everyday tension away.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 10: General Wellness -->
-            <div onclick="showProgram('wellness')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-spa text-4xl text-green-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">General Wellness</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Easy daily stretching tracks engineered to keep your body flexible, protect immunity, and maintain steady vital energy.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 11: Weight Loss -->
-            <div onclick="showProgram('weightloss')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-weight text-4xl text-blue-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Weight & Metabolism</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Active therapeutic flows that safely speed up your natural digestion rate while fully protecting your joints.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-
-            <!-- Card 12: Postpartum Care -->
-            <div onclick="showProgram('postpartum')" class="program-card cursor-pointer p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all">
-                <i class="fas fa-child text-4xl text-pink-400 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">Postpartum Care</h3>
-                <p class="text-sm text-gray-600 mb-4 leading-relaxed">Reconditioning routines focused on gently closing abdominal separations and rebuilding your core safely after baby.</p>
-                <span class="text-sm text-pink-600 font-extrabold tracking-wide inline-flex items-center gap-1 group-hover:underline">View Clinical Details <i class="fas fa-chevron-right text-xs"></i></span>
-            </div>
-	   </div>
+    
+    <a href="/programs/infertility/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-baby text-4xl text-pink-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Infertility Protocol</h3> 
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Natural yoga movements to improve blood flow to reproductive organs and help support smooth conception cycles.</p> 
         </div>
+        <div class="grid-book-btn mx-auto">Book Session</div> 
+    </a>
 
-        <!-- Dynamic Destination Container Hook -->
-        <div id="program-details" class="bg-gray-50 p-6 md:p-10 rounded-[2.5rem] border border-gray-200">
-
-
-<!-- 1. INFERTILITY RECOVERY PROTOCOL -->
-    <div id="infertility" class="tab-content active">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Clinical Gynecology Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Infertility & Reproductive Health</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        Our science-backed approach utilizes specific therapeutic flows designed to optimize uterine arterial blood patterns and lower stress markers via interactive screens.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/BqhfTwc" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/TTikfGlt" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/infertility.webp" alt="Infertility Clinical Yoga Recovery" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/pcos/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-female text-4xl text-pink-500 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">PCOS / PCOD Management</h3> 
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Specialized daily yoga flows to reset your energy levels, balance out hormones, and naturally regulate your monthly cycles.</p> 
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div> 
+    </a>
 
-
-    <!-- 2. PCOS / PCOD MANAGEMENT PROTOCOL -->
-    <div id="pcos" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Endocrine & Metabolic Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">PCOS / PCOD Management</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        Manage complex endocrine symptoms and target deep metabolic insulin resistance through customized therapeutic sequences and visceral compression workflows.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/4NoWCMF" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/Xno5xg1" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/pcos.webp" alt="PCOS Clinical Yoga Treatment" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/pregnancy/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-universal-access text-4xl text-pink-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Pregnancy (Prenatal) Care</h3> 
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Gentle, safe physical setups designed month-by-month to ease back pain, relax your body, and prepare for a smooth childbirth.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-<!-- 3. PREGNANCY (PRENATAL CARE) PROTOCOL -->
-    <div id="pregnancy" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Maternal Maternity Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Pregnancy (Prenatal Care)</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We implement safe, research-backed trimester-wise protocols designed to release paraspinal strain, strengthen the deeper pelvic floor muscles, and enhance cardiorespiratory markers via live streams.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/UMmjXtDX" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/E6Y1QUT1" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/pregnancy.webp" alt="Pregnancy Prenatal Clinical Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/ivf/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-dna text-4xl text-blue-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Yoga during IVF Cycles</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Very soft, relaxing movements to lower treatment stress and improve your body's natural response during IVF cycles.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-    <!-- 4. YOGA DURING IVF CYCLE SUPPORT -->
-    <div id="ivf" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Clinical Assisted Reproductive Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Yoga during IVF Cycles</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We offer localized, hyper-gentle clinical loops designed to systematically increase uterine blood dynamics without applying harmful abdominal stress or internal pressure.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/cSEaw95" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/nBmFZsKV" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/ivf.webp" alt="Yoga During IVF Cycles Support" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/elderly/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-walking text-4xl text-orange-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Elderly Care & Mobility</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Slow-paced, easy movements to loosen tight joints, build daily walking stability, and prevent accidental trips or falls.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-
-<!-- 5. ELDERLY CARE & MOBILITY PROTOCOL -->
-    <div id="elderly" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Geriatric Musculoskeletal Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Elderly Care & Mobility</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We engineer low-impact, therapeutic alignment sequences that target safe range-of-motion extraction, steady joint decompression, and balance adjustments via live feeds.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/V9KrQY7" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/BE1qnKo" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/elderly.webp" alt="Elderly Care Mobility Joint Longevity" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/thyroid/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-leaf text-4xl text-green-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Thyroid Care Protocol</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Targeted neck extensions and refreshing breathing setups to boost tracking energy and counter everyday exhaustion.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-    <!-- 6. THYROID CARE PROTOCOL -->
-    <div id="thyroid" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">Glandular Endocrine Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Thyroid Care Protocol</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We utilize specialized neck extension and throat compression vectors designed to stimulate localized vascular blood flow around the thyroid gland to balance system hormone paths.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/D9tpEqm" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/tSrYO4jV" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/thyroid.webp" alt="Thyroid Care Glandular Stimulation Protocol" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/diabetes/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-tint text-4xl text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Diabetes Management</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Comfortable core twists and gentle abdominal squeezes to improve active digestion and balance daily blood sugar levels.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-
-<!-- 7. DIABETES MANAGEMENT PROTOCOL -->
-    <div id="diabetes" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Metabolic Pancreatic Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Diabetes Management</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We utilize specialized abdominal twists and dynamic therapeutic compression sequences designed to massage the pancreas and visceral organs to assist in improving peripheral insulin sensitivity.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/4ZMSQ3gE" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/4ZMSQ3gE" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/diabetes.webp" alt="Diabetes Management Clinical Twist Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/hypertension/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-heartbeat text-4xl text-red-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Hypertension Therapy</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Calming resting positions paired with focused breath rhythms to soothe the heart rate and lower high blood pressure.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-    <!-- 8. HYPERTENSION THERAPY PROTOCOL -->
-    <div id="hypertension" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-red-600 bg-red-50 px-3 py-1 rounded-full">Cardiovascular Autonomic Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Hypertension Therapy</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We employ structured, breath-centric therapy and restful inversions calibrated to stimulate parasympathetic pathways to lower arterial resistance and modulate tension smoothly.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/HrDcO9F3" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/eBui7yi" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/hypertension.webp" alt="Hypertension Therapy Restorative Breath Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/stress/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-brain text-4xl text-purple-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Stress Management</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Deep mind-body relaxation methods and deep sleep routines to clear brain fog and drop everyday tension away.</p> 
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-
-<!-- 9. STRESS MANAGEMENT PROTOCOL -->
-    <div id="stress" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Nervous System Somatic Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Stress Management</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We layer evidence-based mindfulness resets with deeply restorative postures and structured Yoga Nidra paradigms to re-calibrate nervous system parameters and lower visceral stress metrics safely.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/kJOsd3Ep" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/7GU0iwPM" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/stress.webp" alt="Stress Management Mindfulness Clinical Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/wellness/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-spa text-4xl text-green-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">General Wellness</h3> 
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Easy daily stretching tracks engineered to keep your body flexible, protect immunity, and maintain steady vital energy.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-    <!-- 10. GENERAL WELLNESS & IMMUNITY PROTOCOL -->
-    <div id="wellness" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">Systemic Preventative Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">General Wellness & Immunity</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We introduce integrated vital balance flows engineered to steady structural geometry, maximize cellular oxygenation parameters, and keep the nervous system in a thriving, resilient state.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/GcTPiE8s" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/cSivFmFK" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/gw.webp" alt="General Wellness Biology Vitality Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/weightloss/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-weight text-4xl text-blue-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Weight & Metabolism</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Active therapeutic flows that safely speed up your natural digestion rate while fully protecting your joints.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
 
-
-    <!-- 11. WEIGHT LOSS & METABOLISM RESET PROTOCOL -->
-    <div id="weightloss" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Endocrine Visceral Fat Path</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Weight Loss & Metabolism</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We utilize active therapeutic flows that optimize cellular heat patterns and support balanced endocrine secretion to trigger safe weight regulation while prioritizing joint safety.
-                    </p>
-                </div>
-
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/yntKhvIV" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/T0w3IGr" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/wl.webp" alt="Weight Loss Metabolism Active Clinical Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
+    <a href="/programs/postpartum/" class="program-card block w-full bg-white hover:bg-pink-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm text-center hover:shadow-xl transition-all flex flex-col justify-between items-center no-underline">
+        <div class="w-full flex flex-col items-center">
+            <i class="fas fa-child text-4xl text-pink-400 mb-4"></i>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Postpartum Care</h3>
+            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Reconditioning routines focused on gently closing abdominal separations and rebuilding your core safely after baby.</p>
         </div>
-    </div>
+        <div class="grid-book-btn mx-auto">Book Session</div>
+    </a>
+    
+</div>
+    </div> </section>
 
-    <!-- 12. POSTPARTUM RECOVERY PROTOCOL -->
-    <div id="postpartum" class="tab-content">
-        <div class="premium-program-layout">
-            
-            <!-- LEFT COLUMN: 5 TIERS IN A STRAIGHT LINE -->
-            <div class="vertical-tier-stack">
-                <div class="mb-2">
-                    <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Post-Natal Structural Rehabilitation</span>
-                    <h2 class="text-3xl font-bold mt-2 mb-3">Postpartum Recovery Protocol</h2>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        We apply gentle, restorative anatomical sequences engineered to bring abdominal separations back together, stabilize core parameters, and rebuild lower pelvic shelf alignment safely.
-                    </p>
-                </div>
 
-                <!-- Tier 1: 1 on 1 Indian Nationals -->
-                <div class="premium-tier-card">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                        <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/Lxmk5aF5" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
-                    </div>
-                </div>
-
-                <!-- Tier 2: Group Classes -->
-                <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                        <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                        <p class="premium-tier-price text-pink-600">₹1,499 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        <!-- PASTE YOUR RAZORPAY LINK INSIDE href="#" BELOW -->
-                        <a href="https://rzp.io/rzp/gW54tCyI" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                    </div>
-                </div>
-
-                <!-- Tier 3: Recorded Sessions -->
-                <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                        <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                        <p class="premium-tier-price text-gray-700">₹999 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                    </div>
-                    <div>
-                        <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                    </div>
-                </div>
-
-                <!-- Tier 4: 1 on 1 US Dollars -->
-                <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accomodations.</p>
-                        <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                       
-                        <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                    </div>
-                </div>
-
-                <!-- Tier 5: 1 on 1 Euro -->
-                <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                    <div class="flex-1">
-                        <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                        <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                        <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                    </div>
-                    <div>
-                        
-                        <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- RIGHT COLUMN: PHOTO, SECURITY INFORMATION, AND REDIRECT BADGE -->
-            <div class="w-full lg:sticky lg:top-24 flex flex-col justify-content items-center pt-6 lg:pt-24 gap-4">
-                <img src="/images/pp.webp" alt="Postpartum Core Rehabilitation Pelvic Floor Yoga" class="w-full max-w-sm h-auto object-cover shadow-xl rounded-3xl border-4 border-white">
-                
-                <!-- PREMIUM TRUST BOX -->
-                <div class="w-full max-w-sm bg-white border border-pink-100 rounded-2xl p-4 text-center shadow-sm">
-                    <div class="flex justify-center items-center gap-2 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2">
-                        <i class="fas fa-shield-alt text-sm"></i> Secure Checkout
-                    </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                        Payments are safely secured via Razorpay 256-bit encryption. All major global currencies and payment options are fully supported.
-                    </p>
-                    <p class="text-xs font-bold text-emerald-600 mt-2 pt-2 border-t border-dashed border-gray-100">
-                        <i class="fas fa-globe"></i> International Clients: Payments are automatically converted to your local domestic currency securely via Razorpay.
-                    </p>
-                    <hr class="border-gray-100 my-2">
-                    <p class="text-[11px] font-semibold text-gray-400 leading-normal">
-                        Scroll further down to review the line-by-line feature differences between the tiers, along with our verified customer reviews below.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div> 
-</div> 
-</section>
-
+       
 <!-- SECTION 4: PREMIUM PLAN COMPARISON TABLE -->
 <section id="pricing" class="py-20 bg-gradient-to-b from-white to-rose-50/20">
     <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Section Heading -->
         <div class="text-center mb-16">
-            <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Transparent Features</span>
+            <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Transparent Options</span>
             <h2 class="text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight">Compare Our Program Tiers</h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Review the detailed structural differences between our three care options.
+                Review features, schedules, and pricing options tailored to your recovery path.
             </p>
-            
         </div>
 
-        <!-- Responsive Table Wrapper -->
-        <div class="overflow-x-auto rounded-[2rem] border border-pink-100 shadow-2xl bg-white">
-            <table class="premium-pricing-table">
+        <div class="overflow-x-auto rounded-[2rem] border border-pink-100 shadow-xl bg-white">
+            <table class="w-full text-left border-collapse min-w-[800px]">
                 
-                <!-- Table Headers -->
                 <thead>
-                    <tr>
-                        <th class="premium-param-col rounded-tl-[2rem]">Core Features & Care Parameters</th>
-                        <th class="premium-tier-col text-center" style="background-color: #1e1b4b !important;">Private 1-on-1 Premium</th>
-                        <th class="premium-tier-col text-center">Live Group Batch</th>
-                        <th class="premium-tier-col text-center rounded-tr-[2rem]">Recorded Tracks</th>
+                    <tr class="bg-gray-900 text-white border-b border-gray-800">
+                        <th class="p-6 text-lg font-bold w-1/3">Core Features & Care Parameters</th>
+                        <th class="p-6 text-center w-1/4 bg-white border-b border-gray-100 text-gray-900">
+                            <span class="block text-xs font-black uppercase tracking-wider text-pink-600">Private 1-on-1</span>
+                            <span class="price-tag">₹11,999</span>
+                            <span class="price-period">21 Live Sessions</span>
+                        </th>
+                        <th class="p-6 text-center w-1/4 bg-white border-b border-gray-100 text-gray-900">
+                            <span class="block text-xs font-black uppercase tracking-wider text-gray-500">Live Group Batch</span>
+                            <span class="price-tag">₹1,199</span>
+                            <span class="price-period">21 Live Sessions</span>
+                        </th>
+                        <th class="p-6 text-center w-1/4 bg-white border-b border-gray-100 text-gray-900">
+                            <span class="block text-xs font-black uppercase tracking-wider text-gray-500">Recorded Tracks</span>
+                            <span class="price-tag">₹499</span>
+                            <span class="price-period">Lifetime Access</span>
+                        </th>
                     </tr>
                 </thead>
                 
-                <!-- Table Body Content -->
-                <tbody class="divide-y divide-gray-100">
+                <tbody class="divide-y divide-gray-100 text-sm">
                     
-                    <!-- Row 1 -->
-                    <tr class="hover:bg-pink-50/20 transition">
+                    <tr class="hover:bg-pink-50/10 transition">
                         <td class="p-6">
-                            <strong class="text-gray-900 font-extrabold block text-lg mb-1">Live Video Correction</strong>
-                            <span class="text-sm text-gray-400">Real-time individual alignment monitoring over interactive private screens.</span>
+                            <strong class="text-gray-900 font-bold block text-base mb-1">Live Video Correction</strong>
+                            <span class="text-xs text-gray-500">Real-time individual alignment monitoring over interactive private screens.</span>
                         </td>
-                        <td class="text-center highlight-premium-column">
-                            <span class="premium-badge-pill">Full Live Direct Access</span>
-                        </td>
-                        <td class="text-center font-semibold text-gray-800 text-base">
-                            Standard Batch View
-                        </td>
-                        <td class="text-center premium-negative-indicator text-base">
-                            Not Included
-                        </td>
+                        <td class="text-center font-bold text-pink-600 bg-pink-50/5">Full Direct Access</td>
+                        <td class="text-center font-medium text-gray-700">Standard Batch View</td>
+                        <td class="text-center text-gray-400 italic">Not Included</td>
                     </tr>
 
-                    <!-- Row 2 -->
-                    <tr class="hover:bg-pink-50/20 transition">
+                    <tr class="hover:bg-pink-50/10 transition">
                         <td class="p-6">
-                            <strong class="text-gray-900 font-extrabold block text-lg mb-1">Medical Report Analysis</strong>
-                            <span class="text-sm text-gray-400">Customizing sequences directly around ultrasound or lab file markers.</span>
+                            <strong class="text-gray-900 font-bold block text-base mb-1">Medical Report Analysis</strong>
+                            <span class="text-xs text-gray-500">Customizing sequences directly around ultrasound or lab file markers.</span>
                         </td>
-                        <td class="text-center highlight-premium-column font-bold text-gray-900">
-                            <div class="premium-success-indicator">
-                                <i class="fas fa-check-circle"></i> Complete Private Review
-                            </div>
-                        </td>
-                        <td class="text-center text-gray-700 font-medium">
-                            Group Baseline
-                        </td>
-                        <td class="text-center premium-negative-indicator">
-                            Not Included
-                        </td>
+                        <td class="text-center font-bold text-gray-900 bg-pink-50/5"><i class="fas fa-check-circle text-emerald-600"></i> Private Review</td>
+                        <td class="text-center text-gray-600">Group Baseline</td>
+                        <td class="text-center text-gray-400 italic">Not Included</td>
                     </tr>
 
-                    <!-- Row 3 -->
-                    <tr class="hover:bg-pink-50/20 transition">
+                    <tr class="hover:bg-pink-50/10 transition">
                         <td class="p-6">
-                            <strong class="text-gray-900 font-extrabold block text-lg mb-1">Therapeutic Nutrition Guide</strong>
-                            <span class="text-sm text-gray-400">Ayurvedic dietary blueprints tailored to accelerate internal target healing.</span>
+                            <strong class="text-gray-900 font-bold block text-base mb-1">Therapeutic Nutrition Guide</strong>
+                            <span class="text-xs text-gray-500">Ayurvedic dietary blueprints tailored to accelerate internal target healing.</span>
                         </td>
-                        <td class="text-center highlight-premium-column font-bold text-gray-900">
-                            <div class="premium-success-indicator">
-                                <i class="fas fa-check-circle"></i> Custom Blueprint
-                            </div>
-                        </td>
-                        <td class="text-center text-gray-700 font-medium">
-                            General Protocol
-                        </td>
-                        <td class="text-center premium-negative-indicator">
-                            Not Included
-                        </td>
+                        <td class="text-center font-bold text-gray-900 bg-pink-50/5"><i class="fas fa-check-circle text-emerald-600"></i> Custom Blueprint</td>
+                        <td class="text-center text-gray-600">General Protocol</td>
+                        <td class="text-center text-gray-400 italic">Not Included</td>
                     </tr>
 
-                    <!-- Row 4 -->
-                    <tr class="hover:bg-pink-50/20 transition">
+                    <tr class="hover:bg-pink-50/10 transition">
                         <td class="p-6">
-                            <strong class="text-gray-900 font-extrabold block text-lg mb-1">Schedule Flexibility</strong>
-                            <span class="text-sm text-gray-500 block mb-1">Time-zone matching tailored to accommodate international clients.</span>
+                            <strong class="text-gray-900 font-bold block text-base mb-1">Schedule Flexibility</strong>
+                            <span class="text-xs text-gray-500">Time-zone matching tailored to accommodate international clients.</span>
                         </td>
-                        <td class="text-center highlight-premium-column font-black text-gray-900 text-base">
-                            Maximum Adaptability
-                        </td>
-                        <td class="text-center text-gray-500">
-                            Fixed Batch Timings
-                        </td>
-                        <td class="text-center text-emerald-600 font-bold text-base">
-                            Infinite (Practice Anytime)
-                        </td>
+                        <td class="text-center font-bold text-gray-900 bg-pink-50/5">Maximum Adaptability</td>
+                        <td class="text-center text-gray-500">Fixed Batch Timings</td>
+                        <td class="text-center text-emerald-600 font-bold">Practice Anytime</td>
                     </tr>
-
-                    <!-- Row 5 -->
-                    <tr class="hover:bg-pink-50/20 transition">
-                        <td class="p-6">
-                            <strong class="text-gray-900 font-extrabold block text-lg mb-1">Class Operational Routine</strong>
-                            <span class="text-sm text-gray-400">Weekly training pacing and total session allocation volumes.</span>
-                        </td>
-                        <td class="text-center highlight-premium-column font-bold text-gray-900 text-base">
-                            Monday to Friday <span class="block text-xs font-normal text-gray-400 mt-1">(21 Full Sessions)</span>
-                        </td>
-                        <td class="text-center text-gray-800 font-bold text-base">
-                            Monday to Friday <span class="block text-xs font-normal text-gray-400 mt-1">(21 Full Sessions)</span>
-                        </td>
-                        <td class="text-center text-gray-800 font-bold text-base">
-                            Self-Paced Learning <span class="block text-xs font-normal text-gray-400 mt-1">(5 Video Tracks)</span>
-                        </td>
-                    </tr>
-
+                    
                 </tbody>
             </table>
         </div>
@@ -1811,54 +459,5 @@ otherScripts: |
     </div>
 </section>
 
-<!-- SECTION 6: LIGHTWEIGHT TAB OPERATIONAL CONTROLLER SCRIPT -->
-<script>
-    /**
-     * Main Function to Switch Program Detail Content Tabs smoothly
-     * @param {string} id - The matching string token of the active section (e.g. 'pcos', 'infertility')
-     */
-    function showProgram(id) {
-        // 1. Remove the active border outline class from all grid selector cards
-        document.querySelectorAll('.program-card').forEach(card => card.classList.remove('active-card'));
-        
-        // 2. Hide all other program deep-dive text layout wrapper elements
-        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-        
-        // 3. Re-apply the high-visibility active border directly to the picked card
-        const selectedCard = document.querySelector(`[onclick="showProgram('${id}')"]`);
-        if (selectedCard) { 
-            selectedCard.classList.add('active-card'); 
-        }
-        
-        // 4. Reveal the target content element space cleanly with a fade animation
-        const targetSection = document.getElementById(id);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            
-            // FIX: Forces the browser address bar URL to match the active tab instantly
-            history.pushState(null, null, window.location.pathname + '#' + id);
-            
-            // 5. Scroll the window down effortlessly right into the information viewport box
-            document.getElementById('program-details').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
 
-    // AUTOMATED DYNAMIC ROUTER: Opens correct program tab from incoming website address anchors
-    window.addEventListener('DOMContentLoaded', () => {
-        // Reads incoming hash links (e.g., onlineyogaclass.in/programs/#pcos)
-        const incomingHash = window.location.hash.substring(1);
-        
-        if (incomingHash) {
-            // Cushions execution slightly to allow full template elements to paint gracefully
-            setTimeout(() => {
-                if (typeof showProgram === "function") {
-                    showProgram(incomingHash);
-                }
-            }, 100);
-        }
-    });
-</script>
 </div> 

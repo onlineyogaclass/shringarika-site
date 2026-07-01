@@ -17,6 +17,11 @@ module.exports = function(eleventyConfig) {
       });
   });
 
+  // Tells Eleventy to read separate program files from the /programs folder
+  eleventyConfig.addCollection("customPrograms", function(collectionApi) {
+      return collectionApi.getFilteredByGlob("programs/*.html");
+  });
+
   // 2. Safely copies your images, styles, and asset folders into your live website
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("images");
