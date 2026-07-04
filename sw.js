@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = 'shringarika-v1.3';
+﻿const CACHE_NAME = 'shringarika-v2.0';
 
 // These paths must match exactly what is in your folder
 const assets = [

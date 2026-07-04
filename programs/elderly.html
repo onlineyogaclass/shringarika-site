@@ -24,101 +24,171 @@ otherScripts: |
 ---
 
 <style>
-      /* 1. Standardizes ALL price text to one clean, professional Dark Grey color */
-      .premium-tier-price,
-      .text-pink-600, 
-      .text-blue-600, 
-      .text-green-600 {
-          color: #1f2937 !important; /* Uniform deep grey for all currencies */
+      /* Layout Grid for the 5 Premium Cards matching Diabetes Design */
+      .premium-grid-container {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-top: 2rem;
+          justify-content: center;
+      }
+      
+      @media (min-width: 768px) {
+          .premium-grid-container {
+              grid-template-columns: repeat(2, minmax(0, 360px));
+          }
+      }
+      @media (min-width: 1024px) {
+          .premium-grid-container {
+              grid-template-columns: repeat(3, minmax(0, 360px));
+          }
       }
 
-      /* Controls the exact size and elegance of the amount text */
-      .premium-tier-price {
-          font-size: 1.5rem !important; /* Reduces size to a balanced, clean premium font size */
-          font-weight: 800 !important; /* Sets a strong but elegant weight instead of a bulky one */
-          margin-top: 0.25rem !important;
-          display: block !important;
-      }
-
-      /* 2. Unifies all card side borders to a clean pink accent theme */
-      .premium-tier-card, 
-      [style*="border-left-color"],
-      [style*="border-left"] {
-          border-left: 5px solid #db2777 !important;
-          border-color: #fbcfe8 !important;
-      }
-
-      /* 3. Turns the large card backgrounds soft pink while keeping text layout structured */
+      /* Card Styling matching Diabetes Example 3 */
       .premium-tier-card {
-          background-color: #FFF1F2 !important; /* Soft, premium brand pink background canvas */
-          border: 1px solid #fbcfe8 !important; /* Soft pink outer border matching the navigation theme */
+          background-color: #ffffff !important;
+          border: 2px solid #fbcfe8 !important; /* Soft Pink Border line */
+          border-radius: 1.5rem !important;
+          padding: 2rem !important;
           display: flex !important;
           flex-direction: column !important;
           justify-content: space-between !important;
-          gap: 1rem !important;
-          margin-bottom: 1.5rem !important; /* Adds professional breathing space between each card */
+          position: relative !important;
+          max-width: 360px;
+          margin: 0 auto;
+          width: 100%;
+          box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.05) !important;
+          transition: transform 0.3s ease, box-shadow 0.3s ease !important;
       }
 
-      /* 4. Keeps every checkout button equal in width and styled in sleek dark grey */
-      .premium-action-btn,
-      .premium-tier-card a {
-          background-color: #111827 !important; /* Deep dark grey background */
-          color: #ffffff !important; /* White button text */
+      .premium-tier-card:hover {
+          transform: translateY(-5px) !important;
+          box-shadow: 0 20px 35px -5px rgba(219, 39, 119, 0.12) !important;
+      }
+
+      /* Highlighted Card Custom Style */
+      .card-highlighted {
+          border: 2px solid #db2777 !important; /* Vibrant signature pink outline */
+      }
+
+      /* Top Ribbon Badge */
+      .premium-ribbon-badge {
+          position: absolute;
+          top: -12px;
+          left: 24px;
+          background-color: #db2777 !important;
+          color: #ffffff !important;
+          font-size: 10px !important;
+          font-weight: 900 !important;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: 4px 12px !important;
+          border-radius: 9999px !important;
+          box-shadow: 0 4px 10px rgba(219, 39, 119, 0.2) !important;
+      }
+
+      /* Inner Elements styling */
+      .premium-icon-box {
+          width: 48px;
+          height: 48px;
+          border-radius: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+      }
+
+      .premium-tier-title {
+          font-size: 1.25rem !important;
+          font-weight: 800 !important;
+          color: #111827 !important;
+          margin-bottom: 0.5rem;
+          line-height: 1.3;
+      }
+
+      .premium-tier-price {
+          font-size: 2rem !important;
+          font-weight: 900 !important;
+          color: #111827 !important;
+          letter-spacing: -0.03em;
+          margin: 1rem 0 !important;
+          display: block !important;
+      }
+
+      .premium-feature-list {
+          margin-bottom: 2rem !important;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+      }
+
+      .premium-feature-item {
+          display: flex;
+          align-items: start;
+          gap: 0.5rem;
+          font-size: 0.875rem;
+          color: #4b5563;
+          line-height: 1.4;
+      }
+
+      /* Action Buttons with high visibility formatting */
+      .premium-action-btn {
+          color: #ffffff !important;
           border: none !important;
-          border-radius: 0.75rem !important;
+          border-radius: 9999px !important;
           display: inline-flex !important;
           align-items: center !important;
           justify-content: center !important;
           gap: 0.5rem !important;
           font-weight: 800 !important;
-          font-size: 0.85rem !important; 
-          letter-spacing: 0.05em !important;
-          text-transform: uppercase !important;
+          font-size: 0.9rem !important; 
+          letter-spacing: 0.02em !important;
           padding: 1rem 1.5rem !important;
           width: 100% !important; 
           text-align: center !important;
-          white-space: normal !important; 
           text-decoration: none !important;
-          min-height: 54px !important; 
+          transition: all 0.2s ease !important;
+          margin-bottom: 1.25rem;
       }
 
-     /* MOBILE VERSION: Premium, compact vertical layout stacking */
-      @media (max-width: 767px) {
-          .premium-tier-card {
-              flex-direction: column !important;
-              align-items: stretch !important;
-              gap: 1.25rem !important;
-          }
-          .premium-action-btn,
-          .premium-tier-card a {
-              width: 100% !important;
-              max-width: 100% !important;
-          }
+      .btn-pink { background-color: #db2777 !important; }
+      .btn-pink:hover { background-color: #be185d !important; }
+
+      .btn-blue { background-color: #2563eb !important; }
+      .btn-blue:hover { background-color: #1d4ed8 !important; }
+
+      .btn-emerald { background-color: #059669 !important; }
+      .btn-emerald:hover { background-color: #047857 !important; }
+
+      .btn-purple { background-color: #7c3aed !important; }
+      .btn-purple:hover { background-color: #6d28d9 !important; }
+
+      .btn-indigo { background-color: #4f46e5 !important; }
+      .btn-indigo:hover { background-color: #4338ca !important; }
+
+      /* Trust Bottom Bar elements */
+      .premium-trust-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 1rem;
+          border-top: 1px solid #f3f4f6;
+          font-size: 0.75rem;
+          color: #6b7280;
+          font-weight: 600;
       }
 
-      /* DESKTOP VERSION: Text on the left, button perfectly uniform on the right */
-      @media (min-width: 768px) {
-          .premium-tier-card {
-              flex-direction: row !important; /* Puts text on the left, button on the right */
-              align-items: center !important; /* Vertically centers the elements */
-              justify-content: space-between !important; /* Stretches the margin gaps between them */
-          }
-
-          .premium-action-btn,
-          .premium-tier-card a {
-              width: 320px !important; /* CRITICAL: Sets a fixed uniform width instead of width: 100% */
-              max-width: 320px !important; 
-              flex-shrink: 0 !important; /* Prevents the button from shrinking if the text left to it gets long */
-              margin-left: auto !important; /* Pushes the button perfectly flush against the right margin edge */
-          }
+      .trust-students {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
       }
 
-      /* 5. Smooth hover animations when cursor passes over buttons */
-      .premium-action-btn:hover,
-      .premium-tier-card a:hover {
-          background-color: #1f2937 !important;
-          transform: translateY(-1px) !important;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+      .trust-rating {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          color: #db2777;
       }
 </style>
 
@@ -169,7 +239,6 @@ otherScripts: |
                 </a>
             </div>
 
-            <!-- International Payment Badge -->
             <div class="flex items-center space-x-3 mt-6 p-3 bg-white/40 backdrop-blur-sm border border-pink-200/60 rounded-xl w-fit shadow-sm">
                 <div class="flex space-x-2 text-gray-500 text-sm">
                     <i class="fab fa-cc-visa"></i>
@@ -194,7 +263,6 @@ otherScripts: |
     </div>
 </header>
 
-<!-- SECTION 2: INTERACTIVE CLINICAL CONDITION GRID -->
 <section id="programs-grid" class="py-20 bg-pink-50/60 transition-colors">
     <div class="max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto mb-10">
@@ -248,14 +316,11 @@ otherScripts: |
         
         <hr class="border-gray-100 mt-16">
         
-        <!-- Dynamic Destination Container Hook -->
         <div id="program-details" class="bg-gray-50 p-6 md:p-10 rounded-[2.5rem] border border-gray-200">     
 
-            <!-- 5. ELDERLY CARE & MOBILITY PROTOCOL -->
             <div id="elderly" class="tab-content active block w-full">
                 <div class="w-full">
                     
-                    <!-- FULL WIDTH HEADER -->
                     <div class="w-full text-left mb-6">
                         <span class="text-xs font-black uppercase tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Geriatric Musculoskeletal Path</span>
                         <h2 class="text-3xl font-bold mt-2 mb-3">Elderly Care & Mobility</h2>
@@ -264,7 +329,6 @@ otherScripts: |
                         </p>
                     </div>
 
-                    <!-- START OF TECHNIQUE DETAILS SECTION -->
                     <div class="my-6 p-6 bg-white border border-pink-100 rounded-2xl shadow-sm space-y-6">
                         <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2">
                             <i class="fas fa-heartbeat text-pink-500"></i> Our Specialized Geriatric Methodology
@@ -274,7 +338,6 @@ otherScripts: |
                         </p>
 
                         <div class="grid grid-cols-1 gap-4">
-                            <!-- Pillar 1 -->
                             <div class="flex items-start gap-3 bg-pink-50/40 p-4 rounded-xl border border-pink-100">
                                 <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center shrink-0 mt-0.5">
                                     <i class="fas fa-calendar-alt text-pink-600 text-sm"></i>
@@ -287,7 +350,6 @@ otherScripts: |
                                 </div>
                             </div>
 
-                            <!-- Pillar 2 -->
                             <div class="flex items-start gap-3 bg-pink-50/40 p-4 rounded-xl border border-pink-100">
                                 <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center shrink-0 mt-0.5">
                                     <i class="fas fa-child text-pink-600 text-sm"></i>
@@ -300,7 +362,6 @@ otherScripts: |
                                 </div>
                             </div>
 
-                            <!-- Pillar 3 -->
                             <div class="flex items-start gap-3 bg-pink-50/40 p-4 rounded-xl border border-pink-100">
                                 <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center shrink-0 mt-0.5">
                                     <i class="fas fa-wind text-pink-600 text-sm"></i>
@@ -322,69 +383,136 @@ otherScripts: |
                         </p>
                     </div>
 
-                    <!-- Tier 1: 1 on 1 Indian Nationals -->
-                    <div class="premium-tier-card">
-                        <div class="flex-1">
-                            <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
-                            <p class="text-sm text-gray-500 mb-2">Complete live video correction & custom Ayurvedic nutrition blueprints.</p>
-                            <p class="premium-tier-price text-pink-600">₹11,999 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
+                    <div class="premium-grid-container">
+
+                        <div class="premium-tier-card card-highlighted">
+                            <div class="premium-ribbon-badge">★ Most Popular</div>
+                            <div>
+                                <div class="premium-icon-box bg-pink-100 text-pink-600">
+                                    <i class="fas fa-female text-2xl"></i>
+                                </div>
+                                <h4 class="premium-tier-title">Personalized 1-on-1 Program (Indian Nationals)</h4>
+                                <p class="text-xs text-gray-400 font-medium">Complete personal attention & custom blueprints.</p>
+                                <span class="premium-tier-price">₹11,999 <span class="text-xs font-bold text-pink-600">/ 21 Sessions</span></span>
+                                
+                                <div class="premium-feature-list">
+                                    <div class="premium-feature-item"><i class="fas fa-check text-pink-600 mt-1"></i> <span>21 Live 1-on-1 Sessions</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-pink-600 mt-1"></i> <span>Personalized Yoga Therapy</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-pink-600 mt-1"></i> <span>Personalised Nutrition Plan</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-pink-600 mt-1"></i> <span>Direct WhatsApp Support</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://rzp.io/rzp/V9KrQY7" class="premium-action-btn btn-pink shadow-md">Book 1-on-1 Session →</a>
+                                <div class="premium-trust-bar">
+                                    <div class="trust-students"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                                    <div class="trust-rating"><i class="fas fa-star"></i> 4.9 Rating</div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <a href="https://rzp.io/rzp/V9KrQY7" class="premium-action-btn bg-gray-900 hover:bg-black text-white shadow-md">Book 1-on-1 Session</a>
+
+                        <div class="premium-tier-card">
+                            <div>
+                                <div class="premium-icon-box bg-blue-100 text-blue-600">
+                                    <i class="fas fa-user-friends text-xl"></i>
+                                </div>
+                                <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
+                                <p class="text-xs text-gray-400 font-medium">Interactive online live batch tracking with clear daily timings.</p>
+                                <span class="premium-tier-price">₹1,199 <span class="text-xs font-bold text-blue-600">/ 21 Sessions</span></span>
+                                
+                                <div class="premium-feature-list">
+                                    <div class="premium-feature-item"><i class="fas fa-check text-blue-600 mt-1"></i> <span>Live Group Yoga Sessions</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-blue-600 mt-1"></i> <span>Daily Schedule & Reminders</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-blue-600 mt-1"></i> <span>Group Support & Motivation</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://rzp.io/rzp/BE1qnKo" class="premium-action-btn btn-blue shadow-md">Join Live Group Batch →</a>
+                                <div class="premium-trust-bar">
+                                    <div class="trust-students"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                                    <div class="trust-rating" style="color: #2563eb;"><i class="fas fa-star"></i> 4.9 Rating</div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="premium-tier-card">
+                            <div>
+                                <div class="premium-icon-box bg-emerald-100 text-emerald-600">
+                                    <i class="fas fa-play-circle text-xl"></i>
+                                </div>
+                                <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
+                                <p class="text-xs text-gray-400 font-medium">Premium pre-recorded core therapeutic flows with lifetime access.</p>
+                                <span class="premium-tier-price">₹499 <span class="text-xs font-bold text-emerald-600">/ 5 Videos</span></span>
+                                
+                                <div class="premium-feature-list">
+                                    <div class="premium-feature-item"><i class="fas fa-check text-emerald-600 mt-1"></i> <span>5 Core Video Sessions</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-emerald-600 mt-1"></i> <span>Lifetime Access Code</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-emerald-600 mt-1"></i> <span>Lifetime Access Video</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-emerald-600 mt-1"></i> <span>Step-by-Step Guidance</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn btn-emerald shadow-md">Access Recorded Videos →</a>
+                                <div class="premium-trust-bar">
+                                    <div class="trust-students"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                                    <div class="trust-rating" style="color: #059669;"><i class="fas fa-star"></i> 4.9 Rating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="premium-tier-card">
+                            <div>
+                                <div class="premium-icon-box bg-purple-100 text-purple-600">
+                                    <i class="fas fa-globe text-xl"></i>
+                                </div>
+                                <h4 class="premium-tier-title">Personalized 1-on-1 (USD Payments)</h4>
+                                <p class="text-xs text-gray-400 font-medium">Designed for USA & international clients. Full time-zone accommodations.</p>
+                                <span class="premium-tier-price">$130 <span class="text-xs font-bold text-purple-600">USD / 21 Sessions</span></span>
+                                
+                                <div class="premium-feature-list">
+                                    <div class="premium-feature-item"><i class="fas fa-check text-purple-600 mt-1"></i> <span>Global Timezone Matching</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-purple-600 mt-1"></i> <span>Private Live Video Streams</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-purple-600 mt-1"></i> <span>Custom Medical Adjustments</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-purple-600 mt-1"></i> <span>International Invoicing Secure</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn btn-purple shadow-md">Book USD Session →</a>
+                                <div class="premium-trust-bar">
+                                    <div class="trust-students"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                                    <div class="trust-rating" style="color: #7c3aed;"><i class="fas fa-star"></i> 4.9 Rating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="premium-tier-card">
+                            <div>
+                                <div class="premium-icon-box bg-indigo-100 text-indigo-600">
+                                    <i class="fas fa-euro-sign text-xl"></i>
+                                </div>
+                                <h4 class="premium-tier-title">Personalized 1-on-1 (Euro Payments)</h4>
+                                <p class="text-xs text-gray-400 font-medium">Designed for European clients. Full time-zone accommodations.</p>
+                                <span class="premium-tier-price">€110 <span class="text-xs font-bold text-indigo-600">EUR / 21 Sessions</span></span>
+                                
+                                <div class="premium-feature-list">
+                                    <div class="premium-feature-item"><i class="fas fa-check text-indigo-600 mt-1"></i> <span>EU Timezone Accommodations</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-indigo-600 mt-1"></i> <span>Private Medical Case Review</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-indigo-600 mt-1"></i> <span>Ayurvedic Blueprints Integrated</span></div>
+                                    <div class="premium-feature-item"><i class="fas fa-check text-indigo-600 mt-1"></i> <span>Razorpay Secure Network</span></div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn btn-indigo shadow-md">Book EUR Session →</a>
+                                <div class="premium-trust-bar">
+                                    <div class="trust-students"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                                    <div class="trust-rating" style="color: #4f46e5;"><i class="fas fa-star"></i> 4.9 Rating</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                     </div>
 
-                    <!-- Tier 2: Group Classes -->
-                    <div class="premium-tier-card" style="border-left-color: #ec4899 !important;">
-                        <div class="flex-1">
-                            <h4 class="premium-tier-title">Specialized Live Group Batch</h4>
-                            <p class="text-sm text-gray-500 mb-2">Interactive online live batch tracking with clear daily timings.</p>
-                            <p class="premium-tier-price text-pink-600">₹1,199 <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                        </div>
-                        <div>
-                            <a href="https://rzp.io/rzp/BE1qnKo" class="premium-action-btn bg-pink-600 hover:bg-pink-700 text-white shadow-md">Join Live Group Batch</a>
-                        </div>
-                    </div>
-
-                    <!-- Tier 3: Recorded Sessions -->
-                    <div class="premium-tier-card" style="border-left-color: #9ca3af !important;">
-                        <div class="flex-1">
-                            <h4 class="premium-tier-title">Self-Paced Recorded Program</h4>
-                            <p class="text-sm text-gray-500 mb-2">Premium pre-recorded core therapeutic flows with lifetime access.</p>
-                            <p class="premium-tier-price text-gray-700">₹499 <span class="text-xs font-normal text-gray-400">/ 5 Core Video Sessions</span></p>
-                        </div>
-                        <div>
-                            <a href="https://tagmango.app/9430c6f4fd" class="premium-action-btn bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300">Access Recorded Videos</a>
-                        </div>
-                    </div>
-
-                    <!-- Tier 4: 1 on 1 US Dollars -->
-                    <div class="premium-tier-card" style="border-left-color: #2563eb !important;">
-                        <div class="flex-1">
-                            <h4 class="premium-tier-title">Personalized 1-on-1 Program (USD Payments)</h4>
-                            <p class="text-sm text-gray-500 mb-2">Designed for USA & international clients. Full time-zone accommodations.</p>
-                            <p class="premium-tier-price text-blue-600">$130 USD <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                        </div>
-                        <div>
-                            <a href="https://rzp.io/rzp/U79mpI04" class="premium-action-btn bg-blue-600 hover:bg-blue-700 text-white shadow-md">Book 1-on-1 Session (Other than Indian and EU nationals)</a>
-                        </div>
-                    </div>
-
-                    <!-- Tier 5: 1 on 1 Euro -->
-                    <div class="premium-tier-card" style="border-left-color: #16a34a !important;">
-                        <div class="flex-1">
-                            <h4 class="premium-tier-title">Personalized 1-on-1 Program (Euro Payments)</h4>
-                            <p class="text-sm text-gray-500 mb-2">Designed for European clients. Full time-zone accommodations.</p>
-                            <p class="premium-tier-price text-green-600">€110 EUR <span class="text-xs font-normal text-gray-400">/ 21 Sessions</span></p>
-                        </div>
-                        <div>
-                            <a href="https://rzp.io/rzp/TUhOEiyH" class="premium-action-btn bg-green-600 hover:bg-green-700 text-white shadow-md">Book 1-on-1 Session (For EU Nationals)</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- BALANCED FOOTER ROW: NOTICE LEFT, PHOTO RIGHT -->
                 <div class="w-full mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch clear-both pt-8 border-t border-pink-100/60">
                     <div class="w-full bg-white border border-pink-100 rounded-[2rem] p-8 text-left shadow-sm flex flex-col justify-between max-w-md mx-auto md:mx-0">
                         <div>
@@ -418,11 +546,9 @@ otherScripts: |
     </div> 
 </section>
 
-<!-- SECTION 4: PREMIUM PLAN COMPARISON TABLE -->
 <section id="pricing" class="py-20 bg-gradient-to-b from-white to-rose-50/20">
     <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Section Heading -->
         <div class="text-center mb-16">
             <span class="text-xs font-black uppercase tracking-widest text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Transparent Features</span>
             <h2 class="text-4xl font-black text-gray-900 mt-3 mb-4 tracking-tight">Compare Our Program Tiers</h2>
@@ -431,10 +557,8 @@ otherScripts: |
             </p>
         </div>
 
-        <!-- Responsive Table Wrapper -->
         <div class="overflow-x-auto rounded-[2rem] border border-pink-100 shadow-2xl bg-white">
             <table class="premium-pricing-table">
-                <!-- Table Headers -->
                 <thead>
                     <tr>
                         <th class="premium-param-col rounded-tl-[2rem]">Core Features & Care Parameters</th>
@@ -443,10 +567,7 @@ otherScripts: |
                         <th class="premium-tier-col text-center rounded-tr-[2rem]">Recorded Tracks</th>
                     </tr>
                 </thead>
-                
-                <!-- Table Body Content -->
                 <tbody class="divide-y divide-gray-100">
-                    <!-- Row 1 -->
                     <tr class="hover:bg-pink-50/20 transition">
                         <td class="p-6">
                             <strong class="text-gray-900 font-extrabold block text-lg mb-1">Live Video Correction</strong>
@@ -463,7 +584,6 @@ otherScripts: |
                         </td>
                     </tr>
 
-                    <!-- Row 2 -->
                     <tr class="hover:bg-pink-50/20 transition">
                         <td class="p-6">
                             <strong class="text-gray-900 font-extrabold block text-lg mb-1">Medical Report Analysis</strong>
@@ -482,7 +602,6 @@ otherScripts: |
                         </td>
                     </tr>
 
-                    <!-- Row 3 -->
                     <tr class="hover:bg-pink-50/20 transition">
                         <td class="p-6">
                             <strong class="text-gray-900 font-extrabold block text-lg mb-1">Therapeutic Nutrition Guide</strong>
@@ -501,7 +620,6 @@ otherScripts: |
                         </td>
                     </tr>
 
-                    <!-- Row 4 -->
                     <tr class="hover:bg-pink-50/20 transition">
                         <td class="p-6">
                             <strong class="text-gray-900 font-extrabold block text-lg mb-1">Schedule Flexibility</strong>
@@ -518,7 +636,6 @@ otherScripts: |
                         </td>
                     </tr>
 
-                    <!-- Row 5 -->
                     <tr class="hover:bg-pink-50/20 transition">
                         <td class="p-6">
                             <strong class="text-gray-900 font-extrabold block text-lg mb-1">Class Operational Routine</strong>
@@ -541,7 +658,6 @@ otherScripts: |
     </div>
 </section>
 
-<!-- SECTION 5: WORLD-CLASS SUCCESS STORIES & CLINICAL HEADQUARTERS -->
 <section class="py-16 bg-[#0f172a] text-white testimonial-font">
     <div class="max-w-7xl mx-auto px-6 mb-10 flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
@@ -554,16 +670,13 @@ otherScripts: |
         </a>
     </div>
 
-    <!-- PageSpeed Protected Review Canvas & Map Setup -->
     <div class="max-w-7xl mx-auto px-6 block clear-both w-full space-y-12">
         
-        <!-- Lightweight Asynchronous Review Widget Canvas Container -->
         <div id="featurable-eee66ac1-335d-451c-8d9f-8e9335eb8c2b" 
              class="block w-full" 
              data-featurable-async>
         </div>
 
-        <!-- Verified Hospital Presence Mapping Frame -->
         <div class="max-w-4xl mx-auto px-4 text-center space-y-4 pt-10 border-t border-slate-800/80">
             <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
                 Our Clinical Research Headquarters
@@ -572,7 +685,6 @@ otherScripts: |
                 Banaras Hindu University
             </p>
             
-            <!-- Secure Map Canvas Component Box -->
             <div class="rounded-[2rem] overflow-hidden border border-slate-800 shadow-2xl bg-slate-950">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461472.378123558!2d83.09004247510585!3d25.36283746470583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b0c96ec9372f775%3A0x4ce6a86ad4d30379!2sClinical%20Yoga%20Classes%20by%20Shringarika%20Mishra!5e0!3m2!1sen!2sin!4v1781171301165!5m2!1sen!2sin" 
@@ -585,7 +697,6 @@ otherScripts: |
                 </iframe>
             </div>
             
-            <!-- Geographic Badge -->
             <div class="text-slate-500 text-xs uppercase tracking-[0.2em] font-bold pt-2">
                 BHU Campus, Varanasi, UP, India, 221005
             </div>
